@@ -3,131 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Otimiza AI — Baixar (beta)</title>
+<!-- O site mora no domínio (Servidor/src/site/index.html, servido pelo Worker). Esta página, publicada no GitHub
+     pelo publicar.bat, só leva quem chegar pelo endereço antigo até lá. -->
+<title>Otimiza AI</title>
+<link rel="canonical" href="https://otimizaaioficial.com.br/">
+<meta http-equiv="refresh" content="0; url=https://otimizaaioficial.com.br/">
 <style>
-  :root {
-    --bg:#171D25; --card:#24282F; --line:#3D4450; --text:#DCDEDF; --muted:#8B929A;
-    --accent:#1A9FFF; --accent-h:#4DB3FF; --brand:#FF8A1F; --ok:#5BC24A; --strong:#FFFFFF;
-  }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { background:var(--bg); color:var(--text); font-family:"Segoe UI Variable Text","Segoe UI",system-ui,sans-serif; line-height:1.55; }
-  .top { border-top:2px solid var(--accent); }
-  .wrap { max-width:920px; margin:0 auto; padding:56px 24px 72px; }
-  .logo { font-weight:700; font-size:30px; letter-spacing:.5px; }
-  .logo .o { color:var(--muted); } .logo .ai { color:var(--brand); }
-  .beta { display:inline-block; vertical-align:middle; margin-left:10px; padding:1px 7px; border:1px solid var(--brand);
-          color:var(--brand); font-size:11px; font-weight:700; border-radius:2px; letter-spacing:.5px; }
-  h1 { font-size:34px; color:var(--strong); margin:28px 0 10px; line-height:1.2; }
-  .lead { color:var(--muted); font-size:17px; max-width:640px; }
-  .cta { margin-top:30px; display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
-  .btn { background:var(--accent); color:#fff; text-decoration:none; font-weight:600; padding:14px 28px; border-radius:2px; font-size:16px; }
-  .btn:hover { background:var(--accent-h); }
-  .meta { color:var(--muted); font-size:13px; }
-  h2 { font-size:13px; letter-spacing:1.2px; color:var(--muted); font-weight:600; margin:56px 0 14px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; }
-  .card { background:var(--card); padding:20px 22px; border-radius:3px; }
-  .card b { color:var(--strong); display:block; margin-bottom:4px; }
-  .card span { color:var(--muted); font-size:14px; }
-
-  /* aviso do Windows (ilustração) */
-  .warn { background:var(--card); border-left:3px solid var(--brand); padding:22px 24px; border-radius:3px; }
-  .warn p { margin-bottom:10px; }
-  .steps { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px; }
-  @media (max-width:700px) { .steps { grid-template-columns:1fr; } }
-  .shot { background:#0F5DB3; color:#fff; padding:20px 20px 16px; border-radius:2px; font-size:13px; min-height:190px; position:relative; }
-  .shot .t { font-size:19px; font-weight:600; margin-bottom:8px; }
-  .shot .link { text-decoration:underline; display:inline-block; margin-top:6px; }
-  .shot .btns { position:absolute; right:16px; bottom:14px; display:flex; gap:8px; }
-  .shot .b { border:1px solid #fff; padding:4px 14px; font-size:12.5px; }
-  .shot .b.fill { background:#fff; color:#0F5DB3; }
-  .dl { background:#F7F7F7; color:#1B1B1B; padding:16px 18px; border-radius:6px; font-size:13px; min-height:150px; position:relative;
-        box-shadow:0 4px 18px rgba(0,0,0,.35); }
-  .dl .h { font-weight:600; margin-bottom:10px; }
-  .dl .row { display:flex; gap:10px; align-items:flex-start; }
-  .dl .ic { color:#C27C0E; font-size:16px; line-height:1; }
-  .dl .menu { margin-top:10px; margin-left:26px; display:inline-flex; flex-direction:column; gap:6px; background:#fff;
-              border:1px solid #ddd; border-radius:4px; padding:8px 12px; }
-  .dl .btn2 { display:inline-block; background:#0F6CBD; color:#fff; padding:4px 12px; border-radius:4px; margin-top:12px; margin-left:26px; }
-  .mark { outline:3px solid var(--brand); outline-offset:3px; border-radius:2px; }
-  .num { display:inline-block; width:22px; height:22px; border-radius:50%; background:var(--brand); color:#111;
-         font-weight:700; font-size:13px; text-align:center; line-height:22px; margin-right:8px; }
-  .cap { margin-top:10px; font-size:14px; }
-  .note { color:var(--muted); font-size:13px; margin-top:16px; }
-  footer { margin-top:64px; padding-top:22px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+  body { margin:0; background:#12161C; color:#E8EAF0; font:16px/1.5 "Segoe UI Variable Text","Segoe UI",system-ui,sans-serif;
+         display:flex; min-height:100vh; align-items:center; justify-content:center; text-align:center; padding:0 16px; }
+  a { color:#1A9FFF; font-weight:600; }
 </style>
 </head>
-<body class="top">
-<div class="wrap">
-  <div class="logo"><span class="o">OTIMIZA</span> <span class="ai">AI</span><span class="beta">BETA</span></div>
-
-  <h1>Seu Windows mais rápido e limpo,<br>sem medo de estragar nada.</h1>
-  <p class="lead">Otimiza AI ajusta o Windows para jogos e uso do dia a dia. Cada mudança pode ser desfeita com um clique, e um ponto de restauração é criado antes.</p>
-
-  <div class="cta">
-    <!-- O link aponta sempre para a versão mais nova publicada no GitHub -->
-    <a class="btn" id="download" href="https://github.com/otimizaaioficial-creator/otimiza-ai/releases/latest/download/OtimizaAI-Setup.exe">Baixar para Windows</a>
-    <span class="meta">Windows 10 e 11 · 64 bits · grátis durante o beta</span>
-  </div>
-
-  <h2>ANTES DE INSTALAR: AVISOS NORMAIS DO NAVEGADOR E DO WINDOWS</h2>
-  <div class="warn">
-    <p>Como o Otimiza AI é novo, o navegador e o Windows ainda não o conhecem e pedem uma confirmação. É normal para programas novos e acontece <b>só na primeira instalação</b>: as atualizações depois são automáticas.</p>
-
-    <p style="margin-top:18px"><b>No navegador</b> (Edge, Chrome ou Brave), o download pode aparecer como <b>"normalmente não é baixado"</b>:</p>
-    <div class="steps">
-      <div>
-        <div class="dl">
-          <div class="h">Downloads</div>
-          <div class="row"><span class="ic">⚠</span><span>OtimizaAI-Setup.exe normalmente não é baixado. Verifique se você confia antes de abrir.</span><span class="mark" style="padding:0 6px">···</span></div>
-          <div class="menu"><span>Excluir</span><span class="mark">Manter</span><span>Saiba mais</span></div>
-        </div>
-        <p class="cap"><span class="num">1</span>Clique nos <b>três pontinhos</b> do download e em <b>Manter</b>.</p>
-      </div>
-      <div>
-        <div class="dl">
-          <div class="h">Verifique se você confia em OtimizaAI-Setup.exe antes de abrir</div>
-          <span style="color:#555">Nome: OtimizaAI-Setup.exe · Fornecedor: Desconhecido</span><br>
-          <span class="btn2">Excluir ▾</span>
-          <div class="menu" style="margin-left:26px"><span class="mark">Manter mesmo assim</span></div>
-        </div>
-        <p class="cap"><span class="num">2</span>Abra a setinha ao lado de <b>Excluir</b> e clique em <b>Manter mesmo assim</b>. Depois, <b>Abrir arquivo</b>.</p>
-      </div>
-    </div>
-
-    <p style="margin-top:22px">Ao abrir, <b>o Windows</b> pode mostrar a tela azul <b>"O Windows protegeu o computador"</b>:</p>
-    <div class="steps">
-      <div>
-        <div class="shot">
-          <div class="t">O Windows protegeu o computador</div>
-          O Microsoft Defender SmartScreen impediu a inicialização de um aplicativo não reconhecido…<br>
-          <span class="link mark">Mais informações</span>
-          <div class="btns"><span class="b">Não executar</span></div>
-        </div>
-        <p class="cap"><span class="num">3</span>Clique em <b>Mais informações</b>.</p>
-      </div>
-      <div>
-        <div class="shot">
-          <div class="t">O Windows protegeu o computador</div>
-          Aplicativo: OtimizaAI-Setup.exe<br>Fornecedor: Fornecedor desconhecido
-          <div class="btns"><span class="b mark">Executar assim mesmo</span><span class="b">Não executar</span></div>
-        </div>
-        <p class="cap"><span class="num">4</span>Clique em <b>Executar assim mesmo</b>.</p>
-      </div>
-    </div>
-    <p class="note">Depois disso o Windows pede permissão de administrador (clique em "Sim"), porque o app mexe em configurações do sistema.</p>
-  </div>
-
-  <h2>O QUE ELE FAZ</h2>
-  <div class="grid">
-    <div class="card"><b>Otimização em um clique</b><span>Só ajustes seguros: telemetria, propagandas, efeitos e prioridade para jogos.</span></div>
-    <div class="card"><b>Tudo pode ser desfeito</b><span>Cada ajuste guarda o valor original. Desfaça um, uma seção ou tudo.</span></div>
-    <div class="card"><b>Reparos rápidos</b><span>Internet, som, impressora, Windows Update e Explorer travados: um clique.</span></div>
-    <div class="card"><b>Saúde do PC</b><span>Disco, temperaturas, desligamentos inesperados e programas que travam.</span></div>
-    <div class="card"><b>Overlay de jogo</b><span>FPS, 1% low, CPU, GPU e RAM por cima do jogo (Ctrl+Shift+O).</span></div>
-    <div class="card"><b>Menos tranqueiras</b><span>Remove apps de propaganda e tira programas da inicialização.</span></div>
-  </div>
-
-  <footer>Otimiza AI · versão beta · Desenvolvido por Tunin com o Claude Code (Anthropic)</footer>
-</div>
+<body>
+<p>O site do Otimiza AI mudou de endereço.<br><a href="https://otimizaaioficial.com.br/">Ir para otimizaaioficial.com.br</a></p>
 </body>
 </html>
